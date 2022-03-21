@@ -42,3 +42,5 @@ echo "      coc-python:         python 自动补全"
 echo "      coc-cmake"
 echo ""
 echo "      coc-snippets:       代码片段补全"
+
+echo "!!! 	install.sh 只是用软链接安装, 请不要删除该仓库 		!!!"
