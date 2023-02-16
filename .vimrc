@@ -55,7 +55,7 @@ set mouse=n 		" 命令模式可以使用鼠标
 set ai          	"自动对齐
 
 " 使用的背景主题
-colorscheme Monokai_Gavin
+" colorscheme Monokai_Gavin
 
 " 开启文件类型侦测
 filetype on
