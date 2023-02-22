@@ -25,7 +25,7 @@ vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.wo.foldlevel = 99
 
 -- 保存文件时自动格式化
--- local auto_indent = vim.api.nvim_create_augroup("AUTO_INDENT", {clear = true})
+local auto_indent = vim.api.nvim_create_augroup("AUTO_INDENT", {clear = true})
 vim.api.nvim_create_autocmd({"BufWritePost"}, {
     pattern = "*",
     group = auto_indent,
