@@ -5,21 +5,20 @@ get_time() {
 }
 
 myvim=`pwd -P`
+
 cd $HOME
 
-
 # 将原来的备份
-if [ -f ~/.vimrc ] || [ -h ~/.vimrc ]; then
-    mv ~/.vimrc ~/.vimrc.`get_time`;
-fi
+# if [ -d .config/nvim ]; then
+#     mv .config/nvim ~/.config/nvim.`get_time`;
+# fi
 
-if [ -d ~/.vim ]; then
-    mv ~/.vim ~/.vim.`get_time`;
-fi
-
+# if [ -d ~/.vim ]; then
+#     mv ~/.vim ~/.vim.`get_time`;
+# fi
 
 # 链接 myvim
-ln -s ${myvim}/.vimrc .vimrc
+ln -s ${myvim}/nvim .config/nvim
 ln -s ${myvim}/.vim .vim
 
 echo "打开 vim, 按下面步骤做"

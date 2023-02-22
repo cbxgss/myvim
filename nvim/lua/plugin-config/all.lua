@@ -1,0 +1,13 @@
+require("plugin-config/vscode")
+require("plugin-config/bufferline")
+require("plugin-config/nvimtree")
+require("plugin-config/dashboard")
+require("plugin-config/lualine")
+require("plugin-config/whichkey")
+require('plugin-config/terminal')
+require('plugin-config/telescope')
+require('plugin-config/autosession')
+require('plugin-config/treesitter')
+
+-- require('lsp/setup')
+-- require('plugin-config/cmp')

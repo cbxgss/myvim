@@ -1,8 +1,2 @@
-plugged
-
-.vim/*
-!.vim/autoload/
-!.vim/colors/
-!.vim/dictionary/
-!.vim/syntax/
-!.vim/coc-settings.json
+nvim/pack
+nvim/plugin
