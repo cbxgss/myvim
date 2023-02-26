@@ -12,3 +12,9 @@ vim.api.nvim_create_autocmd({"BufWritePost"}, {
     vim.o.path = vim.o.path .. ",**/*"
     end
 })
+-- 自动保存
+vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+    pattern = { "*" },
+    command = "silent! wall",
+    nested = true,
+})
