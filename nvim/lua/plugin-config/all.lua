@@ -10,6 +10,7 @@ require('plugin-config/telescope')
 require('plugin-config/autosession')
 require('plugin-config/treesitter')
 require('plugin-config/markdown')
+require('plugin-config/img-paste')
 require('plugin-config/nerdcommenter')
 
 -- require('lsp/setup')

@@ -29,7 +29,7 @@ vim.api.nvim_set_keymap("n", "bn", ":BufferLineCycleNext<CR>", {noremap = true, 
 vim.api.nvim_set_keymap("n", "bp", ":BufferLineCyclePrev<CR>", {noremap = true, silent = true})
 
 -- 关闭当前buffer
-vim.api.nvim_set_keymap("n", "bc", ":bdelete %<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "bc", ":bdelete %<CR>:BufferLineGoToBuffer 1<CR>", {noremap = true, silent = true})
 
 -- 选择 buffer 关闭
 vim.api.nvim_set_keymap("n", "bP", ":BufferLinePickClose<CR>", {noremap = true, silent = true})
