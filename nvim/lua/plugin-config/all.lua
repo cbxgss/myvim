@@ -14,6 +14,7 @@ require('plugin-config/img-paste')
 require('plugin-config/nerdcommenter')
 require('plugin-config/auto-pairs')
 require('plugin-config/coc')
+require('plugin-config/translator')
 
 -- require('lsp/setup')
 -- require('plugin-config/cmp')

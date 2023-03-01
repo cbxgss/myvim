@@ -29,6 +29,9 @@ return require('packer').startup(function(use)
 	-- 快捷键提示
 	use {"folke/which-key.nvim"}
 
+	-- 翻译
+	use {'voldikss/vim-translator'}
+
 	-- 终端
 	use {"akinsho/toggleterm.nvim", tag = 'v2.*'}
 
