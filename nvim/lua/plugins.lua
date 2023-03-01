@@ -43,6 +43,7 @@ return require('packer').startup(function(use)
 		run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
 		}}
 	}
+	use { "nvim-telescope/telescope-file-browser.nvim" }
 
 	-- 自动保存上次会话
 	use {'rmagatti/auto-session'}

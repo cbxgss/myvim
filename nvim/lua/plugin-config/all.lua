@@ -12,6 +12,8 @@ require('plugin-config/treesitter')
 require('plugin-config/markdown')
 require('plugin-config/img-paste')
 require('plugin-config/nerdcommenter')
+require('plugin-config/auto-pairs')
+require('plugin-config/coc')
 
 -- require('lsp/setup')
 -- require('plugin-config/cmp')

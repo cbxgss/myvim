@@ -1,3 +1,5 @@
+require("telescope").load_extension "file_browser"
+
 -- 查找文件
 vim.api.nvim_set_keymap("n", "<leader>ff", "<Cmd>Telescope find_files<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<C-p>", "<Cmd>Telescope find_files<CR>", {noremap = true, silent = true})
