@@ -1,0 +1,7 @@
+require("conf/edit/whichkey")
+require('conf/edit/nerdcommenter')
+require('conf/edit/vim-translator')
+require('conf/edit/telescope')
+require('conf/edit/treesitter')
+require('conf/edit/toggleterm')
+require('conf/edit/code_runner')

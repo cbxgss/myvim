@@ -1,8 +1,7 @@
-require('basic')
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
-require('keybinding/all')
 
-require("plugins")
-require("plugin-config/all")
+require('basic.all')
 
-require('autocmds')
+require("conf.all")
