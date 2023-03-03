@@ -1,7 +1,8 @@
 require("nvim-tree").setup({
     filters = {
         custom = {          -- 不显示
-            ".git/"
+            ".git/",
+            "__pycache__",
         },
         exclude = {         -- 显示
             ".gitignore"    --      .gitignore
@@ -14,9 +15,10 @@ require("nvim-tree").setup({
     view = {
         mappings = {
             list = {    -- 定义快捷键
-                {key = "d", action = "create"},
-                {key = "R", action = "rename"},
-                {key = "D", action = "remove"}
+                {key = "n", action = "create"},
+                {key = "r", action = "rename"},
+                {key = "<delete>", action = "remove"},
+                {key = "<bs>", action = "remove"},
             }
         }
     }
