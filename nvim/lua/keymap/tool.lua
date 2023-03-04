@@ -10,13 +10,23 @@ local plug_map = {
 	["n|<leader>ss"] = map_cu("SaveSession"):with_noremap():with_silent():with_desc("session: 保存"),
 	["n|<leader>sr"] = map_cu("RestoreSession"):with_noremap():with_silent():with_desc("session: 恢复"),
 	["n|<leader>sd"] = map_cu("DeleteSession"):with_noremap():with_silent():with_desc("session: 删除"),
+
 	-- vim-translator
 	["n|<leader>tl"] = map_cr("Translate"):with_noremap():with_silent():with_desc("翻译"),
 	["v|<leader>tl"] = map_cr("TranslateV"):with_noremap():with_silent():with_desc("翻译"),
 	["n|<leader>tw"] = map_cr("TranslateW"):with_noremap():with_silent():with_desc("翻译到窗口"),
 	["v|<leader>tw"] = map_cr("TranslateWV"):with_noremap():with_silent():with_desc("翻译到窗口"),
+
 	-- nvim-tree 文件树
 	["n|<F2>"] = map_cr("NvimTreeToggle"):with_noremap():with_silent():with_desc("打开/关闭文件树"),
+
+	-- vim-fugitive git
+	["n|<leader>gg"] = map_cu("Git"):with_noremap():with_silent():with_desc("Open git-fugitive"),
+	["n|<leader>gs"] = map_cr("G status"):with_noremap():with_silent():with_desc("status"),
+	["n|<leader>ga"] = map_cmd(":Git add "):with_noremap():with_desc("add"),
+	["n|<leader>gc"] = map_cr("G commit"):with_noremap():with_silent():with_desc("commit"),
+	["n|<leader>gps"] = map_cr("G push"):with_noremap():with_silent():with_desc("push"),
+	["n|<leader>gpl"] = map_cr("G pull"):with_noremap():with_silent():with_desc("pull"),
 
 	-- telescope 搜索
 	["n|<leader>fo"] = map_cu("Telescope oldfiles"):with_noremap():with_silent():with_desc("find: 历史文件"),
@@ -58,12 +68,6 @@ local plug_map = {
 	-- 	:with_desc("edit: Change current direrctory by zoxide"),
 	-- ["n|<leader>fb"] = map_cu("Telescope buffers"):with_noremap():with_silent():with_desc("find: Buffer opened"),
 	-- ["n|<leader>fs"] = map_cu("Telescope grep_string"):with_noremap():with_silent():with_desc("find: Current word"),
-
-	-- -- Plugin: vim-fugitive
-	-- ["n|gps"] = map_cr("G push"):with_noremap():with_silent():with_desc("git: Push"),
-	-- ["n|gpl"] = map_cr("G pull"):with_noremap():with_silent():with_desc("git: Pull"),
-	-- ["n|<leader>G"] = map_cu("Git"):with_noremap():with_silent():with_desc("git: Open git-fugitive"),
-
 
 	-- -- Plugin: sniprun
 	-- ["v|<leader>r"] = map_cr("SnipRun"):with_noremap():with_silent():with_desc("tool: Run code by range"),

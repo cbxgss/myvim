@@ -39,5 +39,6 @@ return function()
 		["<leader>p"] = { name = "插件管理" },
 		["<leader>h"] = { name = "hop跳转" },
 		["<leader>g"] = { name = "git" },
+		["<leader>gp"] = { name = "push & pull" },
 	})
 end
