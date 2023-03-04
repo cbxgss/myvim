@@ -1,6 +1,0 @@
-require("conf/user-interface/vscode")
-require("conf/user-interface/nvim-tree")
-require("conf/user-interface/bufferline")
-require("conf/user-interface/dashboard")
-require('conf/user-interface/auto-session')
-require("conf/user-interface/lualine")

@@ -1,7 +1,3 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
-
-require('basic.all')
-
-require("conf.all")
+if not vim.g.vscode then
+	require("core")
+end
