@@ -7,11 +7,21 @@ return function()
 			},
 			panel = {
 				-- if true, it can interfere with completions in copilot-cmp
-				enabled = false,
+				enabled = true,
 			},
 			suggestion = {
 				-- if true, it can interfere with completions in copilot-cmp
-				enabled = false,
+				enabled = true,
+				auto_trigger = true,
+				debounce = 75,
+				keymap = {
+					accept = "<C-y>",
+					accept_word = false,
+					accept_line = false,
+					next = "<C-n>",
+					prev = "<C-p>",
+					dismiss = "<C-]>",
+				},
 			},
 			filetypes = {
 				-- ["dap-repl"] = false,
