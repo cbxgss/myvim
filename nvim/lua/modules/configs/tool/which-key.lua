@@ -40,5 +40,7 @@ return function()
 		["<leader>h"] = { name = "hop跳转" },
 		["<leader>g"] = { name = "git" },
 		["<leader>gp"] = { name = "push & pull" },
+        ["<leader>m"] = { name = "markdown" },
+        ["<leader>c"] = { name = "注释" },
 	})
 end

@@ -8,14 +8,14 @@ require("keymap.helpers")
 local plug_map = {
 	-- auto-session
 	["n|<leader>ss"] = map_cu("SaveSession"):with_noremap():with_silent():with_desc("session: 保存"),
-	["n|<leader>sr"] = map_cu("RestoreSession"):with_noremap():with_silent():with_desc("session: 恢复"),
+    ["n|<leader>sr"] = map_cu("RestoreSession"):with_noremap():with_silent():with_desc("session: 恢复"),
 	["n|<leader>sd"] = map_cu("DeleteSession"):with_noremap():with_silent():with_desc("session: 删除"),
 
 	-- vim-translator
 	["n|<leader>tl"] = map_cr("Translate"):with_noremap():with_silent():with_desc("翻译"),
-	["v|<leader>tl"] = map_cr("TranslateV"):with_noremap():with_silent():with_desc("翻译"),
+	["x|<leader>tl"] = map_cmd("<Plug>TranslateV"):with_noremap():with_silent():with_desc("翻译"),
 	["n|<leader>tw"] = map_cr("TranslateW"):with_noremap():with_silent():with_desc("翻译到窗口"),
-	["v|<leader>tw"] = map_cr("TranslateWV"):with_noremap():with_silent():with_desc("翻译到窗口"),
+	["x|<leader>tw"] = map_cmd("<Plug>TranslateWV"):with_noremap():with_silent():with_desc("翻译到窗口"),
 
 	-- nvim-tree 文件树
 	["n|<F2>"] = map_cr("NvimTreeToggle"):with_noremap():with_silent():with_desc("打开/关闭文件树"),
@@ -134,6 +134,69 @@ local plug_map = {
 	-- 	:with_silent()
 	-- 	:with_desc("git: Toggle lazygit"),
 
+	-- dap 调试
+	["n|<F6>"] = map_callback(function()
+			require("dap").continue()
+		end)
+		:with_noremap()
+		:with_silent()
+		:with_desc("debug: Run/Continue"),
+	["n|<F7>"] = map_callback(function()
+			require("dap").terminate()
+			require("dapui").close()
+		end)
+		:with_noremap()
+		:with_silent()
+		:with_desc("debug: Stop"),
+	["n|<F8>"] = map_callback(function()
+			require("dap").toggle_breakpoint()
+		end)
+		:with_noremap()
+		:with_silent()
+		:with_desc("debug: Toggle breakpoint"),
+	["n|<F9>"] = map_callback(function()
+			require("dap").step_into()
+		end)
+		:with_noremap()
+		:with_silent()
+		:with_desc("debug: Step into"),
+	["n|<F10>"] = map_callback(function()
+			require("dap").step_out()
+		end)
+		:with_noremap()
+		:with_silent()
+		:with_desc("debug: Step out"),
+	["n|<F11>"] = map_callback(function()
+			require("dap").step_over()
+		end)
+		:with_noremap()
+		:with_silent()
+		:with_desc("debug: Step over"),
+	["n|<leader>db"] = map_callback(function()
+			require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
+		end)
+		:with_noremap()
+		:with_silent()
+		:with_desc("debug: Set breakpoint with condition"),
+	["n|<leader>dc"] = map_callback(function()
+			require("dap").run_to_cursor()
+		end)
+		:with_noremap()
+		:with_silent()
+		:with_desc("debug: Run to cursor"),
+	["n|<leader>dl"] = map_callback(function()
+			require("dap").run_last()
+		end)
+		:with_noremap()
+		:with_silent()
+		:with_desc("debug: Run last"),
+	["n|<leader>do"] = map_callback(function()
+			require("dap").repl.open()
+		end)
+		:with_noremap()
+		:with_silent()
+		:with_desc("debug: Open REPL"),
+
 	-- -- Plugin: trouble
 	-- ["n|gt"] = map_cr("TroubleToggle"):with_noremap():with_silent():with_desc("lsp: Toggle trouble list"),
 	-- ["n|<leader>tr"] = map_cr("TroubleToggle lsp_references")
@@ -155,68 +218,6 @@ local plug_map = {
 	-- ["n|<leader>tl"] = map_cr("TroubleToggle loclist"):with_noremap():with_silent():with_desc("lsp: Show loclist"),
 
 
-	-- -- Plugin: dap
-	-- ["n|<F6>"] = map_callback(function()
-	-- 		require("dap").continue()
-	-- 	end)
-	-- 	:with_noremap()
-	-- 	:with_silent()
-	-- 	:with_desc("debug: Run/Continue"),
-	-- ["n|<F7>"] = map_callback(function()
-	-- 		require("dap").terminate()
-	-- 		require("dapui").close()
-	-- 	end)
-	-- 	:with_noremap()
-	-- 	:with_silent()
-	-- 	:with_desc("debug: Stop"),
-	-- ["n|<F8>"] = map_callback(function()
-	-- 		require("dap").toggle_breakpoint()
-	-- 	end)
-	-- 	:with_noremap()
-	-- 	:with_silent()
-	-- 	:with_desc("debug: Toggle breakpoint"),
-	-- ["n|<F9>"] = map_callback(function()
-	-- 		require("dap").step_into()
-	-- 	end)
-	-- 	:with_noremap()
-	-- 	:with_silent()
-	-- 	:with_desc("debug: Step into"),
-	-- ["n|<F10>"] = map_callback(function()
-	-- 		require("dap").step_out()
-	-- 	end)
-	-- 	:with_noremap()
-	-- 	:with_silent()
-	-- 	:with_desc("debug: Step out"),
-	-- ["n|<F11>"] = map_callback(function()
-	-- 		require("dap").step_over()
-	-- 	end)
-	-- 	:with_noremap()
-	-- 	:with_silent()
-	-- 	:with_desc("debug: Step over"),
-	-- ["n|<leader>db"] = map_callback(function()
-	-- 		require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
-	-- 	end)
-	-- 	:with_noremap()
-	-- 	:with_silent()
-	-- 	:with_desc("debug: Set breakpoint with condition"),
-	-- ["n|<leader>dc"] = map_callback(function()
-	-- 		require("dap").run_to_cursor()
-	-- 	end)
-	-- 	:with_noremap()
-	-- 	:with_silent()
-	-- 	:with_desc("debug: Run to cursor"),
-	-- ["n|<leader>dl"] = map_callback(function()
-	-- 		require("dap").run_last()
-	-- 	end)
-	-- 	:with_noremap()
-	-- 	:with_silent()
-	-- 	:with_desc("debug: Run last"),
-	-- ["n|<leader>do"] = map_callback(function()
-	-- 		require("dap").repl.open()
-	-- 	end)
-	-- 	:with_noremap()
-	-- 	:with_silent()
-	-- 	:with_desc("debug: Open REPL"),
 }
 
 bind.nvim_load_mapping(plug_map)

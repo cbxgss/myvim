@@ -28,9 +28,35 @@ local plug_map = {
     -- code_runner
     ["n|<F5>"] = map_cr("RunCode"):with_noremap():with_silent():with_desc("运行代码"),
 
-	-- diffview
+	-- diffview git diff
 	["n|<leader>gd"] = map_cr("DiffviewOpen"):with_silent():with_noremap():with_desc("git: 显示 diff"),
 	["n|<leader>gD"] = map_cr("DiffviewClose"):with_silent():with_noremap():with_desc("git: 关闭 diff"),
+
+    -- comment.nvim 注释
+	["n|<leader>cl"] = map_callback(function()
+			return vim.v.count == 0 and et("<Plug>(comment_toggle_linewise_current)")
+				or et("<Plug>(comment_toggle_linewise_count)")
+		end):with_noremap():with_expr():with_desc("当前行"),
+    ["n|<leader>cb"] = map_callback(function()
+			return vim.v.count == 0 and et("<Plug>(comment_toggle_blockwise_current)")
+				or et("<Plug>(comment_toggle_blockwise_count)")
+		end):with_noremap():with_expr():with_desc("块 当前行"),
+	["x|<leader>cl"] = map_cmd("<Plug>(comment_toggle_linewise_visual)")
+		:with_silent()
+		:with_noremap()
+		:with_desc("选定行"),
+	["x|<leader>cb"] = map_cmd("<Plug>(comment_toggle_blockwise_visual)")
+		:with_silent()
+		:with_noremap()
+		:with_desc("块 选定行"),
+    ["n|<leader>cpl"] = map_cmd("<Plug>(comment_toggle_linewise)")
+		:with_silent()
+		:with_noremap()
+		:with_desc("待选择"),
+	["n|<leader>cpb"] = map_cmd("<Plug>(comment_toggle_blockwise)")
+		:with_silent()
+		:with_noremap()
+		:with_desc("块 待选择"),
 }
 
 bind.nvim_load_mapping(plug_map)

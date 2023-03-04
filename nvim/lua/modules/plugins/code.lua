@@ -42,12 +42,11 @@ code["nvim-treesitter/nvim-treesitter"] = {
 	},
 }
 
--- code["preservim/nerdcommenter"] = {
---     lazy = true,
---     event = "BufReadPost",
---     cmd = "NERDCommenterToggle",
---     config = require("code.nerdcommenter"),
--- }
+code["numToStr/Comment.nvim"] = {
+	lazy = true,
+	event = { "CursorHold", "CursorHoldI" },
+	config = require("code.comment"),
+}
 
 code["CRAG666/code_runner.nvim"] = {
     lazy = true,
@@ -66,6 +65,11 @@ code["windwp/nvim-autopairs"] = {
     lazy = true,
     event = "InsertEnter",
     config = require("code.nvim-autopairs"),
+}
+
+code["mg979/vim-visual-multi"] = {
+    lazy = true,
+    event = "BufReadPost",
 }
 
 code["sindrets/diffview.nvim"] = {

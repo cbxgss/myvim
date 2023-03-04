@@ -19,7 +19,6 @@ cd $HOME
 
 # 链接 myvim
 ln -s ${myvim}/nvim .config/nvim
-ln -s ${myvim}/.vim .vim
 
 echo "打开 vim, 按下面步骤做"
 echo ""
