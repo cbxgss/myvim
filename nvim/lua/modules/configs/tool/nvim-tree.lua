@@ -120,7 +120,7 @@ return function()
 		filters = {
 			dotfiles = false,
 			custom = { ".DS_Store", ".git", "__pycache__" },
-			exclude = {},
+			exclude = { ".gitignore", "compile_commands.json" },
 		},
 		actions = {
 			use_system_clipboard = true,

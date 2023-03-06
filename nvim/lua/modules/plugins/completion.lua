@@ -59,12 +59,12 @@ completion["zbirenbaum/copilot.lua"] = {
 	cmd = "Copilot",
 	event = "InsertEnter",
 	config = require("completion.copilot"),
-	dependencies = {
-		{
-			"zbirenbaum/copilot-cmp",
-			config = require("completion.copilot-cmp"),
-		},
-	},
+	-- dependencies = {
+	-- 	{
+	-- 		"zbirenbaum/copilot-cmp",
+	-- 		config = require("completion.copilot-cmp"),
+	-- 	},
+	-- },
 }
 
 return completion

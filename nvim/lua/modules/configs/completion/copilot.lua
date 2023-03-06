@@ -15,15 +15,17 @@ return function()
 				auto_trigger = true,
 				debounce = 75,
 				keymap = {
-					accept = "<C-y>",
+                    -- 设置 tab 键接受
+                    accept = "<A-y>",
 					accept_word = false,
 					accept_line = false,
-					next = "<C-n>",
-					prev = "<C-p>",
-					dismiss = "<C-]>",
+					next = "<A-n>",
+					prev = "<A-p>",
+					dismiss = "<A-]>",
 				},
 			},
 			filetypes = {
+                ["*"] = true,
 				-- ["dap-repl"] = false,
 				-- ["big_file_disabled_ft"] = false,
 			},

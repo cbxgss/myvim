@@ -23,6 +23,7 @@ local plug_map = {
 	-- vim-fugitive git
 	["n|<leader>gg"] = map_cu("Git"):with_noremap():with_silent():with_desc("Open git-fugitive"),
 	["n|<leader>gs"] = map_cr("G status"):with_noremap():with_silent():with_desc("status"),
+    ["n|<leader>gl"] = map_cr("G log"):with_noremap():with_silent():with_desc("log"),
 	["n|<leader>ga"] = map_cmd(":Git add "):with_noremap():with_desc("add"),
 	["n|<leader>gc"] = map_cr("G commit"):with_noremap():with_silent():with_desc("commit"),
 	["n|<leader>gps"] = map_cr("G push"):with_noremap():with_silent():with_desc("push"),
